@@ -1,5 +1,6 @@
 package com.socialmarc.springer.controller;
 
+import com.socialmarc.springer.model.Person;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,6 +22,14 @@ public class HomeController {
     @GetMapping("/error")
     public String sayError() {
         return "Error happend";
+    }
+
+    @GetMapping("/person")
+    public Person getPerson() {
+        Person person = new Person();
+        person.age = 40;
+        person.name = "Marc Wiese";
+        return person;
     }
 
 }
